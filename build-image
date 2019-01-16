@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t ct-docker-base .
+docker build -t ct-base-ubuntu .
