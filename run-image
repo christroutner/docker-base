@@ -1,0 +1,3 @@
+#!/bin/bash
+docker container run --name ct-base-ubuntu -d \
+--rm ct-base-ubuntu

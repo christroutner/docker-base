@@ -33,3 +33,6 @@ RUN mkdir /home/safeuser/.npm-global
 RUN chown -R safeuser .npm-global
 RUN echo "export PATH=~/.npm-global/bin:$PATH" >> /home/safeuser/.profile
 RUN runuser -l safeuser -c "npm config set prefix '~/.npm-global'"
+
+COPY dummyapp.js dummyapp.js
+CMD ["node", "dummyapp.js"]
