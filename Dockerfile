@@ -1,12 +1,13 @@
 # Creates an Ubuntu base docker images. This is a foundational Docker image that
 # will be used to create other Docker images, mostly node.js projects.
 # Features
-# - node.js v10 & npm
-# - git, curl
+# - Ubuntu 20.04
+# - node.js v14 & npm
+# - git, curl, wget
 # - non-sudo global installs with npm (like on a mac)
 
 #IMAGE BUILD COMMANDS
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 MAINTAINER Chris Troutner <chris.troutner@gmail.com>
 
 #Update the OS and install any OS packages needed.
@@ -14,7 +15,7 @@ RUN apt-get update
 RUN apt-get install -y sudo git curl nano gnupg wget
 
 #Install Node and NPM
-RUN curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+RUN curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install -y nodejs build-essential
 
